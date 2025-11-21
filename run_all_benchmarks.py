@@ -11,7 +11,7 @@ if __name__ == '__main__':
 
 
     response = requests.get(
-        'https://raw.githubusercontent.com/LeoIV/bencher/master/BencherServer/bencherserver/benchmark-registry.json',
+        'https://raw.githubusercontent.com/lpapenme/bencher/refs/heads/main/BencherServer/benchmark-registry.json',
     )
 
     registry = response.json()
