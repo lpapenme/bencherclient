@@ -1,23 +1,27 @@
-[tool.poetry]
+[project]
 name = "bencherclient"
 version = "0.1.0"
 description = ""
-authors = ["Leonard Papenmeier <leonard.papenmeier@gmail.com>"]
+authors = [{ name = "Leonard Papenmeier", email = "leonard.papenmeier@gmail.com" }]
+requires-python = "~=3.11"
 readme = "README.md"
-packages = [
-    { include = "bencherclient", from = "." }
-]
+dependencies = ["bencherscaffold>=0.3.1,<0.4"]
 
-[tool.poetry.dependencies]
-python = "^3.11"
-bencherscaffold = "^0.3.1"
-
-[tool.poetry.scripts]
+[project.scripts]
 client-start = "bencherclient.client:main"
 
-[tool.poetry.group.dev.dependencies]
-requests = "^2.31.0"
+[dependency-groups]
+dev = ["requests>=2.31.0,<3"]
+
+[tool.hatch.build.targets.sdist]
+include = ["./bencherclient"]
+
+[tool.hatch.build.targets.wheel]
+include = ["./bencherclient"]
+
+[tool.hatch.build.targets.wheel.sources]
+"./bencherclient" = "bencherclient"
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
