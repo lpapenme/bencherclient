@@ -1,11 +1,11 @@
 [project]
 name = "bencherclient"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
-authors = [{ name = "Leonard Papenmeier", email = "leonard.papenmeier@gmail.com" }]
-requires-python = "~=3.11"
+authors = [{ name = "Leonard Papenmeier", email = "leonard@papenmeier.io" }]
+requires-python = ">=3.8.0,<3.15.0"
 readme = "README.md"
-dependencies = ["bencherscaffold>=0.3.1,<0.4"]
+dependencies = ["bencherscaffold~=0.4.5"]
 
 [project.scripts]
 client-start = "bencherclient.client:main"
